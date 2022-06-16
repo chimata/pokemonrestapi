@@ -1,0 +1,9 @@
+com\pokemon\pokemonrestapi\Sprites.class
+com\pokemon\pokemonrestapi\PokemonApiSecondResponse.class
+com\pokemon\pokemonrestapi\Results.class
+com\pokemon\pokemonrestapi\PokemonApiController.class
+com\pokemon\pokemonrestapi\PokemonApiImageNameResponse.class
+com\pokemon\pokemonrestapi\PokemonApiClientService.class
+com\pokemon\pokemonrestapi\PokemonApiFirstResponse.class
+com\pokemon\pokemonrestapi\RestTemplateClient.class
+com\pokemon\pokemonrestapi\PokemonrestapiApplication.class

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokemon Rest API</title>
+    <script type="text/javascript" src="js/app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            width: 50%;
+            text-align: center;
+            border:solid 0px #ddd;
+            padding: 0px;
+            overflow: hidden;
+        }
+        input {font-size: 18px;}
+        #container div {
+            margin: 0;
+            width: 49%;
+            float: left;
+            text-align: center;
+        }
+        #container div img {
+            border: none;
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome To RESTful Pokémon API.</h1>
+<p>
+    <input type="button" onclick="showPokemonNamesWithImages()" value="Show Pokemon"/>
+</p>
+<div id='container'></div>
+</body>
+<script>
+    function showPokemonNamesWithImages() {
+
+        var xHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+        function reportStatus() {
+            if (xHR.readyState == 4)               // Request completed.
+                showTheList(this.responseText);
+        }
+
+        xHR.onreadystatechange = reportStatus;
+        xHR.open("GET", "http://localhost:9009/api/v1/images", true);   // true = asynchronous request
+        xHR.send();
+
+        function showTheList(json) {
+            var arrItems = [];
+            arrItems = JSON.parse(json); 	// Populate array with JSON data.
+
+            var div = document.getElementById('container');     // The parent <div>.
+            div.innerHTML = '';
+
+            // Loop through data in the JSON array.
+            for (i = 0; i <= arrItems.length - 1; i++) {
+
+                var divLeft = document.createElement('div');
+                divLeft.innerHTML = arrItems[i].imageName;
+
+                var img = document.createElement('img');
+                img.src = arrItems[i].imagePath;
+
+                var divRight = document.createElement('div');
+                divRight.setAttribute('style', 'border-left: solid 3px #ddd;');
+                divRight.appendChild(img);
+
+               // Add the child DIVs to parent DIV.
+                div.appendChild(divLeft);
+                div.appendChild(divRight);
+            }
+        }
+    }
+</script>
+</html>

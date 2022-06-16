@@ -1,0 +1,19 @@
+    #container {
+            width: 50%;
+            text-align: center;
+            border:solid 0px #ddd;
+            padding: 0px;
+            overflow: hidden;
+        }
+        input {font-size: 18px;}
+        #container div {
+            margin: 0;
+            width: 49%;
+            float: left;
+            text-align: center;
+        }
+        #container div img {
+            border: none;
+            width: 60px;
+            height: 60px;
+        }

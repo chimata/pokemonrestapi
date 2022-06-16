@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.pokemon.pokemonrestapi.PokemonrestapiApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.418 s - in com.pokemon.pokemonrestapi.PokemonrestapiApplicationTests
